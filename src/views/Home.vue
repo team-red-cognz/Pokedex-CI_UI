@@ -1,10 +1,26 @@
 <template>
   <div class="home">
-    <input v-model="inname" placeholder="insert name here" />
-    <button @click="searchname(inname)">search</button>
-    <p>pokemon name : {{pokename}}</p>
-    <p>id : {{pokeid}}</p>
-    <p>ablity : {{pokeablity}}</p>
+    <!-- <input  placeholder="insert name here" /> -->
+    <sui-input v-model="inname" placeholder="Search Pokemon Name" />
+    <sui-button @click="searchname(inname)">search</sui-button>
+    <sui-divider />
+
+    <table class="ui very basic table" id="box">
+      <tbody>
+        <tr>
+          <td>Pokemon Name:</td>
+          <td>{{pokename}}</td>
+        </tr>
+        <tr>
+          <td>Pokemon ID:</td>
+          <td>{{pokeid}}</td>
+        </tr>
+        <tr>
+          <td>Ablity</td>
+          <td>{{pokeablity}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -19,7 +35,7 @@ export default {
   },
   data() {
     return {
-      iname: "",
+      inname: "",
       pokename: "",
       pokeid: "",
       pokeablity: ""
@@ -27,7 +43,7 @@ export default {
   },
   methods: {
     searchname(pname) {
-      console.log(process.env.VUE_APP_APiCON)
+      console.log(process.env.VUE_APP_APiCON);
       console.log(pname);
       this.$http.get().then(
         response => {
@@ -42,3 +58,22 @@ export default {
   }
 };
 </script>
+
+<style>
+#pokedata {
+  /* max-width: 50%; */
+  /* padding-left: 40% */
+}
+#box {
+  background: whitesmoke;
+  /* height: 10em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+/* .home {
+  width: 50% important;
+} */
+</style>
