@@ -1,0 +1,7 @@
+version: "2"
+services:
+  ui:
+    image: nathstevo97/pokedexui:latest
+    ports:
+    - "8080:80"
+      
