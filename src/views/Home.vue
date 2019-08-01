@@ -1,7 +1,7 @@
 <template>
   <div class="home">
+    Henry and Nathan just doing a test by!
     <!-- <input  placeholder="insert name here" /> -->
-    this is a test
     <sui-input v-model="inname" placeholder="Search Pokemon Name" />
     <sui-button @click="searchname(inname)">Search</sui-button>
     <sui-divider />
@@ -16,9 +16,9 @@
           <td>Pokemon ID:</td>
           <td>{{pokeid}}</td>
         </tr>
-        <tr>
-          <td>Ablity:</td>
-          <td>{{pokeablity}}</td>
+        <tr v-for="ab in pokeablity">
+          <td>Ability:</td>
+          <td>{{ab}}</td>
         </tr>
       </tbody>
     </table>
@@ -36,25 +36,21 @@ export default {
   },
   data() {
     return {
-      inname: "",
+      inname: "ditto",
       pokename: "",
       pokeid: "",
-      pokeablity: ""
+      pokeablity: ['']
     };
   },
   methods: {
     searchname(pname) {
-      console.log(process.env.VUE_APP_APiCON);
-      console.log(pname);
-      this.$http.get().then(
-        response => {
-          // this.someData = response.body;
-          // console.log(this.someData)
-        },
-        response => {
-          // error callback
-        }
-      );
+      console.log(process.env.VUE_APP_APiCON + pname);
+      this.$http.get(process.env.VUE_APP_APiCON + pname).then(response => {
+        this.pokedata = response.body;
+        this.pokename = this.pokedata.name
+        this.pokeid = this.pokedata.id
+        this.pokeablity = this.pokedata.abilities
+      });
     }
   }
 };
