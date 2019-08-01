@@ -1,0 +1,9 @@
+version: "2"
+services:
+  ui:
+    image: nathstevo97/pokedexui:latest
+    ports:
+    - "80:80"
+    volumes:
+    - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      

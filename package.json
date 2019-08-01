@@ -1,0 +1,29 @@
+{
+  "name": "pokedex",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-vue": "^0.8.1",
+    "vue": "^2.6.10",
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^3.9.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
