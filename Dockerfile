@@ -10,5 +10,5 @@ RUN npm run build
 
 FROM nginx:latest
 WORKDIR /app
-COPY --from=build-stage /build/dist/ .
+COPY --from=build-stage /build/dist .
 COPY nginx.conf /etc/nginx/nginx.conf
