@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    Testing testing testiiiiiiiiing
+    LEGENDARY
     <!-- <input  placeholder="insert name here" /> -->
     <sui-input v-model="inname" placeholder="Search Pokemon Name" />
     <sui-button @click="searchname(inname)">Search</sui-button>
