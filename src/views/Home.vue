@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <!-- <input  placeholder="insert name here" /> -->
+    this is a test
     <sui-input v-model="inname" placeholder="Search Pokemon Name" />
-    <sui-button @click="searchname(inname)">search</sui-button>
+    <sui-button @click="searchname(inname)">Search</sui-button>
     <sui-divider />
 
     <table class="ui very basic table" id="box">
@@ -16,7 +17,7 @@
           <td>{{pokeid}}</td>
         </tr>
         <tr>
-          <td>Ablity</td>
+          <td>Ablity:</td>
           <td>{{pokeablity}}</td>
         </tr>
       </tbody>
@@ -70,7 +71,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 35%;
   margin: 0 auto;
 }
 /* .home {
