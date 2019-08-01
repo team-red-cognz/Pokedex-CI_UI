@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    LEGENDARY
+    ALL HAIL OUR LORD AND SAVIOUR RAYQUAZA
     <!-- <input  placeholder="insert name here" /> -->
     <sui-input v-model="inname" placeholder="Search Pokemon Name" />
     <sui-button @click="searchname(inname)">Search</sui-button>
