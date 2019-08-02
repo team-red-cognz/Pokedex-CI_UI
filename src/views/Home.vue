@@ -44,8 +44,8 @@ export default {
   },
   methods: {
     searchname(pname) {
-      console.log(process.env.VUE_APP_APiCON + pname);
-      this.$http.get("http://" + window.location.hostname + "/api/getPokemon?name=" + pname).then(response => {
+      console.log("http://" + window.location.hostname + ":8080/getPokemon?name=" + pname);
+      this.$http.get("http://" + window.location.hostname + ":8080/getPokemon?name=" + pname).then(response => {
         this.pokedata = response.body;
         this.pokename = this.pokedata.name
         this.pokeid = this.pokedata.id
