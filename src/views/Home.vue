@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      inname: "ditto",
+      inname: "pikachu",
       pokename: "",
       pokeid: "",
       pokeablity: ['']
