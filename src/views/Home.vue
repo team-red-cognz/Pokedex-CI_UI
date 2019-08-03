@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    ALL HAIL OUR LORD AND SAVIOUR PIKACHU
     <!-- <input  placeholder="insert name here" /> -->
     <sui-input v-model="inname" placeholder="Search Pokemon Name" />
     <sui-button @click="searchname(inname)">Search</sui-button>
@@ -36,7 +35,7 @@ export default {
   },
   data() {
     return {
-      inname: "ditto",
+      inname: "pikachu",
       pokename: "",
       pokeid: "",
       pokeablity: ['']
@@ -44,8 +43,8 @@ export default {
   },
   methods: {
     searchname(pname) {
-      console.log(process.env.VUE_APP_APiCON + pname);
-      this.$http.get(process.env.VUE_APP_APiCON + pname).then(response => {
+      console.log("http://" + window.location.hostname + ":8080/getPokemon?name=" + pname);
+      this.$http.get("http://" + window.location.hostname + ":8080/getPokemon?name=" + pname).then(response => {
         this.pokedata = response.body;
         this.pokename = this.pokedata.name
         this.pokeid = this.pokedata.id
